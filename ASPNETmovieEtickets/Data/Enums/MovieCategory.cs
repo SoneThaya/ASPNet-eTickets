@@ -1,4 +1,4 @@
-﻿namespace ASPNETmovieEtickets.Data
+﻿namespace ASPNETmovieEtickets.Data.Enums
 {
     public enum MovieCategory
     {
