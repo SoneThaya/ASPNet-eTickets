@@ -1,5 +1,6 @@
 ﻿using ASPNETmovieEtickets.Data;
 using ASPNETmovieEtickets.Data.Services;
+using ASPNETmovieEtickets.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASPNETmovieEtickets.Controllers
@@ -23,6 +24,17 @@ namespace ASPNETmovieEtickets.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("FullName, ProfilePictureURL, Bio")]Actor actor)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View(actor);
+            }
+            _service.Add(actor);
+            return RedirectToAction("Index");
         }
     }
 }
