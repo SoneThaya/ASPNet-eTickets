@@ -24,16 +24,14 @@ namespace ASPNETmovieEtickets.Data.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Actor>> GetAllAsync()
+        public Task<IEnumerable<Actor>> GetAllAsync()
         {
-            var result = await _context.Actors.ToListAsync();
-            return result;
+            throw new NotImplementedException();
         }
 
-        public async Task<Actor> GetByIdAsync(int id)
+        public Task<Actor> GetByIdAsync(int id)
         {
-            var result = await _context.Actors.FirstOrDefaultAsync(x => x.Id == id);
-            return result;
+            throw new NotImplementedException();
         }
 
         public async Task<Actor> UpdateAsync(int id, Actor newActor)
